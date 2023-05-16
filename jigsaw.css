@@ -1,0 +1,15 @@
+#sandbox {
+    border: 1px solid #777;
+}
+
+#control {
+    border: 1px solid #777;
+}
+
+#sandbox div {
+    border: 1px solid #777;
+}
+
+#sandbox img {
+    user-select: none;
+}

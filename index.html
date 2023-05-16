@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=0">
+    <meta name="description" content="Jigsaw">
+    <meta name="keywords" content="Jigsaw,Game,Online,HTML,CSS,JavaScript">
+    <meta name="author" content="Hongyu Zhang">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="jigsaw.css">
+    <script src="jigsaw.js"></script>
+</head>
+
+<body>
+<div>
+    <div id="sandbox" style="position: absolute;"></div>
+    <div id="control" style="position: absolute;">
+        <div id="padding_top"></div>
+        <div id="selects">
+            <div style="text-align: center;margin: auto;">
+                <span>Side Blocks:</span>
+                <label>
+                    <select id="rows" disabled="disabled">
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div id="time" style="width: 100%;text-align: center;">
+            <p id="time_label">Jigsaw</p>
+        </div>
+        <div id="preview" onclick="switchPic()" title="Donations welcome!|欢迎捐赠！"></div>
+        <div id="buttons" style="position: absolute;bottom: 0px;width: 100%;">
+            <div id="config" style="width: 100%;">
+                <button id="config_button" class="button" onClick="config()"
+                        style="width: 80%;height: 100%;display: block;margin: 0 auto;overflow: hidden;">Config
+                </button>
+            </div>
+            <div id="split1"></div>
+            <div id="records" onclick="alert('Move the blocks to complete the puzzle.')" style="width: 100%;">
+                <button id="records_button" class="button" onClick="records()"
+                        style="width: 80%;height: 100%;display: block;margin: 0 auto;overflow: hidden;">Instructions
+                </button>
+            </div>
+            <div id="split2"></div>
+            <div id="start" style="width: 100%;">
+                <button id="start_button" class="button" onClick="start()"
+                        style="width: 80%;height: 100%;display: block;margin: 0 auto;overflow: hidden;">Start
+                </button>
+            </div>
+            <div id="padding_bottom"></div>
+        </div>
+    </div>
+    <div id="src" style="position: absolute;display: none">
+        <label>
+            <input id="src_input" style="width: 100%;">
+        </label>
+    </div>
+</div>
+
+<script>
+    let state = false; // false: before start, true: playing
+    let configState = false;
+    let secondsCount = 0;
+    let countTimer;
+    let src = "jigsaw.jpg";
+    let donateSrc = "donate.png";
+    // let src = "https://7n.w3cschool.cn/statics/images/course/img_navsprites.gif";
+    // let src = "https://raw.githubusercontent.com/moonpath/jigsaw/master/Jigsaw/Resources/0.jpg";
+    // let donateSrc = "https://raw.githubusercontent.com/moonpath/jigsaw/master/Jigsaw/Resources/1.png";
+    generateControl(src);
+    generateBox(Number(document.getElementById("rows").value),
+        src);
+</script>
+</body>
+</html>
