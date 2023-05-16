@@ -65,7 +65,7 @@ function config() {
 
         document.getElementById("src").style.top = `${srcTop + diff}px`;
         document.getElementById("src").style.width = `${srcWidth - diff * 2}px`;
-        document.getElementById("src_input").value = src;
+        document.getElementById("src_input").value = document.getElementById("img_0").src;
         document.getElementById("src").style.display = "block";
 
         configState = true;
